@@ -46,13 +46,14 @@ Warning: after processing the BD.zotutab.txt with log_chloroplast_script, it is 
 3. ```zOTU_removing_script``` - check the taxonomy of the first 20 zOTUs with BLAST and remove zOTUs with low confidence in the taxonomy definition using zOTU_removing_script (in this step you will get updated_BD.zotutab_filtr.txt, updated_BD.z_sintax_filtr.txt and updated_BD.zotus_filtr.fa" without zOTUs with low confidence in the taxonomy definition)
 
 4. ```usearch_data_processing_part_2``` - taxonomy summary reports and statistics report generation
-5. ```rarecurve_script``` 
-6. ```NMDS_plot_script``` 
-7. ```alpha_diversity_script``` 
-8. ```boxplot_script```
-9. ```phylum_relative_abundance_script_275_combi```
-10. ```class_relative_abundance_script_275_combi```
-11. ```genus_relative_abundance_script_275_combi```
+5. ```rarecurve_script``` - generate rarefaction curves for the PA data
+6. ```NMDS_plot_script``` - construction NMDS plot
+7. ```alpha_diversity_script``` - species diversity assessment
+8. ```boxplot_script``` - visualization of species diversity assessment
+9. ```phylum_relative_abundance_script_275_combi``` - visualisation of phylum relative abundance
+10.```class_relative_abundance_script_275_combi``` -  visualisation of classes relative abundance
+11.```genus_relative_abundance_script_275_combi``` - visualisation of genus relative abundance
+
 
 ## Results and discussion
 
