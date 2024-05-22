@@ -99,18 +99,18 @@ data_phylum_top12_FL04_long$name <- factor(data_phylum_top12_FL04_long$name, lev
 # Create bar plot
 FL04 <- ggplot(data_phylum_top12_FL04_long, aes(x = name, y = value, fill = Phylum)) +
   geom_bar(stat = "identity", position = "stack") +
-  scale_fill_manual(values = phylum_colors) + # Используем пользовательскую палитру
+  scale_fill_manual(values = phylum_colors) + 
   labs(title = "April",
        x = "Samples",
        y = "Abundance") +
-  theme_minimal() + # Минималистичная тема
-  theme(plot.title = element_text(hjust = 0.5, size = 30), # Горизонтальное выравнивание и размер заголовка
-        axis.title.x = element_text( size = 10), # Настройка заголовка оси X
-        axis.title.y = element_text(size = 10), # Настройка заголовка оси Y
-        axis.text.x = element_text(angle = 45, hjust = 1, size = 10), # Настройка текста меток оси X
+  theme_minimal() + 
+  theme(plot.title = element_text(hjust = 0.5, size = 30), 
+        axis.title.x = element_text( size = 10), 
+        axis.title.y = element_text(size = 10), 
+        axis.text.x = element_text(angle = 45, hjust = 1, size = 10), 
         legend.text = element_text(size = 15),
         legend.position = "none")
-# Размер текста в легенде
+
 
 print(FL04)
 
@@ -129,17 +129,17 @@ data_phylum_top12_PA04_long$name <- factor(data_phylum_top12_PA04_long$name, lev
 # Create bar plot
 PA04 <- ggplot(data_phylum_top12_PA04_long, aes(x = name, y = value, fill = Phylum)) +
   geom_bar(stat = "identity", position = "stack") +
-  scale_fill_manual(values = phylum_colors) + # Используем пользовательскую палитру
+  scale_fill_manual(values = phylum_colors) + 
   labs(title = "April",
        x = "Samples",
        y = "Abundance") +
-  theme_minimal() + # Минималистичная тема
-  theme(plot.title = element_text(hjust = 0.5, size = 30), # Горизонтальное выравнивание и размер заголовка
-        axis.title.x = element_text( size = 10), # Настройка заголовка оси X
-        axis.title.y = element_text(size = 10), # Настройка заголовка оси Y
-        axis.text.x = element_text(angle = 45, hjust = 1, size = 10), # Настройка текста меток оси X
+  theme_minimal() + 
+  theme(plot.title = element_text(hjust = 0.5, size = 30), 
+        axis.title.x = element_text( size = 10), 
+        axis.title.y = element_text(size = 10),
+        axis.text.x = element_text(angle = 45, hjust = 1, size = 10), 
         legend.text = element_text(size = 15),
-        legend.position = "none") # Размер текста в легенде
+        legend.position = "none") 
 print (PA04)
 
 # Define sample orders for plotting
@@ -161,17 +161,17 @@ data_phylum_top12_FL07_long$name <- factor(data_phylum_top12_FL07_long$name, lev
 # Create bar plot
 FL07 <- ggplot(data_phylum_top12_FL07_long, aes(x = name, y = value, fill = Phylum)) +
   geom_bar(stat = "identity", position = "stack") +
-  scale_fill_manual(values = phylum_colors) + # Используем пользовательскую палитру
+  scale_fill_manual(values = phylum_colors) + 
   labs(title = "July",
        x = "Samples",
        y = "Abundance") +
-  theme_minimal() + # Минималистичная тема
-  theme(plot.title = element_text(hjust = 0.5, size = 30), # Горизонтальное выравнивание и размер заголовка
-        axis.title.x = element_text( size = 10), # Настройка заголовка оси X
-        axis.title.y = element_text(size = 10), # Настройка заголовка оси Y
-        axis.text.x = element_text(angle = 45, hjust = 1, size = 10), # Настройка текста меток оси X
+  theme_minimal() + 
+  theme(plot.title = element_text(hjust = 0.5, size = 30), 
+        axis.title.x = element_text( size = 10), 
+        axis.title.y = element_text(size = 10), 
+        axis.text.x = element_text(angle = 45, hjust = 1, size = 10), 
         legend.text = element_text(size = 15),
-        legend.position = "none") # Размер текста в легенде
+        legend.position = "none") 
 
 print(FL07)
 
@@ -194,32 +194,32 @@ data_phylum_top12_PA07_long$name <- factor(data_phylum_top12_PA07_long$name, lev
 # Create bar plot
 PA07<- ggplot(data_phylum_top12_PA07_long, aes(x = name, y = value, fill = Phylum)) +
   geom_bar(stat = "identity", position = "stack") +
-  scale_fill_manual(values = phylum_colors) + # Используем пользовательскую палитру
+  scale_fill_manual(values = phylum_colors) + 
   labs(title = "July",
        x = "Samples",
        y = "Abundance") +
-  theme_minimal() + # Минималистичная тема
-  theme(plot.title = element_text(hjust = 0.5, size = 30), # Горизонтальное выравнивание и размер заголовка
-        axis.title.x = element_text( size = 10), # Настройка заголовка оси X
-        axis.title.y = element_text(size = 10), # Настройка заголовка оси Y
-        axis.text.x = element_text(angle = 45, hjust = 1, size = 10), # Настройка текста меток оси X
+  theme_minimal() + 
+  theme(plot.title = element_text(hjust = 0.5, size = 30), 
+        axis.title.x = element_text( size = 10), 
+        axis.title.y = element_text(size = 10), 
+        axis.text.x = element_text(angle = 45, hjust = 1, size = 10), 
         legend.text = element_text(size = 15),
-        legend.position = "none")# Размер текста в легенде
+        legend.position = "none")
 print (PA07)
 
 # Create a version of the PA07 plot with legend for extracting legend
 PA07legenda <- ggplot(data_phylum_top12_PA07_long, aes(x = name, y = value, fill = Phylum)) +
   geom_bar(stat = "identity", position = "stack") +
-  scale_fill_manual(values = phylum_colors) + # Используем пользовательскую палитру
+  scale_fill_manual(values = phylum_colors) + 
   labs(title = "PA bacterial phylum in July",
        x = "Samples",
        y = "Abundance") +
-  theme_minimal() + # Минималистичная тема
-  theme(plot.title = element_text(hjust = 0.5, size = 15), # Горизонтальное выравнивание и размер заголовка
-        axis.title.x = element_text( size = 10), # Настройка заголовка оси X
-        axis.title.y = element_text(size = 10), # Настройка заголовка оси Y
-        axis.text.x = element_text(angle = 45, hjust = 1, size = 11), # Настройка текста меток оси X
-        legend.text = element_text(size = 15)) # Размер текста в легенде
+  theme_minimal() + 
+  theme(plot.title = element_text(hjust = 0.5, size = 15), 
+        axis.title.x = element_text( size = 10), 
+        axis.title.y = element_text(size = 10), 
+        axis.text.x = element_text(angle = 45, hjust = 1, size = 11), 
+        legend.text = element_text(size = 15)) 
 
 # Extract the legend from the PA07legenda plot
 legend <- get_legend(PA07legenda)
@@ -229,8 +229,7 @@ combined_plot <- plot_grid(
   plot_grid(FL04, FL07, PA04, PA07, ncol = 2, align = 'v'),
   legend,
   ncol = 2,
-  rel_widths = c(1, 0.6)  # Настройка ширины легенды относительно графиков
-)
+  rel_widths = c(1, 0.6)
 
 # Save the combined plot
 ggsave("phylum_abundance_combined_plot.jpeg", combined_plot, width = 10, height = 15, dpi = 300)
