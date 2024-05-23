@@ -14,8 +14,6 @@ The images for illustrating the repositry's readme files are located in the `ill
 ## Introduction
 
 Lake Baikal is an oligotrophic water body with low concentration of nutrients. During the ice period, the upper layer of water near the bottom surface of the ice is increasingly enriched with nutrients due to salting out processes (doi:10.1080/03680770.1998.11898179) which promotes the development of microorganisms. The goal of the project is to identify similarities and differences in communities of bacteria and microeukaryotes living on the bottom surface of the ice and water column of Lake Baikal using metabarcoding of 16S and 18S rRNA gene fragments. 
-Further reading: Bashenkhaeva et al., 2015, 2023
-
 
 ## Aims
 
@@ -25,8 +23,11 @@ Identify seasonal changes in biodiversity and structure of FL and PA bacterial c
 
 1. Compare the results of sequencing data processing using two pipelines USEARCH10/11 and DADA2;
 2. Data processing: read merging, primer trimming, high-quality filtering, removal of mitochondrial, chloroplast and unknown reads;
-3. Obtaining data on the taxonomic structure and biodiversity of bacterial (rdp_16s_v18) and microeukaryotic (silva_nr_v132) communities.
+3. Obtaining data on the taxonomic structure and biodiversity of bacterial and microeukaryotic communities.
 
+
+(rdp_16s_v18)
+(silva_nr_v132)
 
 ## Data
 Instrument: Illumina MiSeq
