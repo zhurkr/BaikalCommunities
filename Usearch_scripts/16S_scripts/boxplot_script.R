@@ -7,7 +7,6 @@ library(dplyr)
 # Set the working directory
 setwd("D:/Baikal_v3/16S_275")
 
-
 # Read the data from a CSV file
 data_count<-read.csv("updated_BD.zotutab_filtr.txt", header=TRUE, sep="\t", check.names = FALSE)
 

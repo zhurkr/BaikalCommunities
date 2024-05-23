@@ -1,4 +1,3 @@
-#расчет показателей видового разнообразия 
 
 library(tibble)
 library(vegan)

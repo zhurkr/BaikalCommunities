@@ -229,7 +229,7 @@ combined_plot <- plot_grid(
   plot_grid(FL04, FL07, PA04, PA07, ncol = 2, align = 'v'),
   legend,
   ncol = 2,
-  rel_widths = c(1, 0.6)
+  rel_widths = c(1, 0.6))
 
 # Save the combined plot
 ggsave("phylum_abundance_combined_plot.jpeg", combined_plot, width = 10, height = 15, dpi = 300)
