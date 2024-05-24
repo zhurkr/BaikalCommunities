@@ -40,7 +40,9 @@ and rdp_16s_v18 for bacterial diversity.
 
 We have analyzed FL and PA bacteria and microeukaryotic community composition of PA samples from the photic layer of Lake Baikal. The samples were taken from various depths, distances from the shore and seasons. For 37 bacterial community samples a total of 307,100 reads were produced and 185,600 reads for 20 microeukaryotic community. Six samples (V1PL-7-PA, V2UI-10-FL, V2UI-5-PA, V2UI-10-PA, V3UI-5-PA and UW2/30_5) were excluded from further analysis, due to a low coverage. Rarefaction curves suggested that the sequencing effort was enough to estimate the community diversity, although the analysis of PA bacterial communities could benefit from further sequencing.
 
-In this work we used previously published data. The raw sequencing abailable from Sequence Read Archive database (https://www.ncbi.nlm.nih.gov/sra, 19 December 2022) of the National Center for Biotechnology Information under the BioProject number PRJNA913685.
+In this work we used previously published data. The raw sequencing available from Sequence Read Archive database (https://www.ncbi.nlm.nih.gov/sra, 19 December 2022) of the National Center for Biotechnology Information under the BioProject number PRJNA913685.
+
+Bacterial community samples with identification numbers 'V1UI-0-FL', 'V1UI-0-PA', 'V1UI-5-FL', 'V1UI-5-PA', 'V2UI-0-FL', 'V2UI-0-PA', 'V2UI-5-FL', 'V2UI-30-FL', 'V2UI-30-PA', 'V3UI-0-FL', 'V3UI-0-PA', 'V3UI-5-FL', 'V3UI-10-FL', 'V3UI-10-PA', 'V3UI-30-FL', 'V3UI-30-PA', 'V1PL-0-FL', 'V1PL-0-PA', 'V1PL-3-FL', 'V1PL-3-PA', 'V1PL-7-FL', 'V2PL-0-FL', 'V2PL-0-PA', 'V2PL-5-FL', 'V2PL-5-PA', 'V2PL-10-FL', 'V2PL-10-PA', 'V2PL-30-FL', 'V2PL-30-PA', 'V3PL-0-FL', 'V3PL-0-PA', 'V3PL-5-FL', 'V3PL-5-PA', 'V3PL-10-FL', 'V3PL-10-PA', 'V3PL-30-FL', 'V3PL-30-PA' and microeukaryotic community samples with identification numbers  'UW1/0_5','UW1/5_5','UW2/0_5', 'UW2/5_5', 'UW2/10_5', 'UW3/0_5', 'UW3/5_5', 'UW3/10_5', 'UW3/30_5', 'PL1/0_5', 'PL1/3_5', 'PL1/7_5', 'PL2/0_5', 'PL2/5_5', 'PL2/10_5', 'PL2/30_5', 'PL3/0_5', 'PL3/5_5', 'PL3/10_5', 'PL3/30_5' were included in our analysis.
 
 Metadata are situated in the `data` folder.
 
