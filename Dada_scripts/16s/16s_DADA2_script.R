@@ -107,9 +107,10 @@ rownames(track) <- sample.names
 head(track)
 
 ### Assign taxonomy
+# get trainset from https://zenodo.org/records/4310151
 taxa <- assignTaxonomy(seqtab.nochim, "rdp_train_set_18.fa", multithread=TRUE)
 
-### inspect the taxonomic assignments:
+### Inspect the taxonomic assignments:
 
 taxa.print <- taxa # Removing sequence rownames for display only
 rownames(taxa.print) <- NULL
@@ -118,6 +119,7 @@ stock_taxa <- taxa.print
 #taxa.print <- stock_taxa
 
 samples.out <- rownames(seqtab.nochim)
+# Get metadata file from data folder to working directory
 metadata <- read_xlsx("Metadata_Varnachka_new.xlsx", sheet="16S")
 
 samdf <- as.data.frame(metadata)
