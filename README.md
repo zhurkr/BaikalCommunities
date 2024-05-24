@@ -50,42 +50,42 @@ Metadata are situated in the `data` folder.
 
 ##### Usearch+vegan pipeline for 16S data processing
 
-1. ```usearch_data_processing``` - (part_1) data processing: read merging, primer trimming, high-quality filtering (expected error threshold 1.0 (option -fastq_maxee 1.0)), finding unique read, predicting biological sequences, filtering chimeras, making zOTU table, taxonomy prediction, removal of mitochondrial, chloroplast and unknown reads;
+1. ```1_usearch_data_processing.sh``` - data processing: read merging, primer trimming, high-quality filtering (expected error threshold 1.0 (option -fastq_maxee 1.0)), finding unique read, predicting biological sequences, filtering chimeras, making zOTU table, taxonomy prediction, removal of mitochondrial, chloroplast and unknown reads;
 
-2. ```log_chloroplast_script``` - removing chloroplasts and mitochondria from the BD.zotus.fa, BD.z_sintax.txt and BD.zotutab.txt files (in R language). Then carry out further analysis;
+2. ```2_log_chloroplast_script.R``` - removing chloroplasts and mitochondria from the BD.zotus.fa, BD.z_sintax.txt and BD.zotutab.txt files (in R language). Then carry out further analysis;
 
 Warning: after processing the BD.zotutab.txt with log_chloroplast_script, it is necessary to rename the first column in the filtered BD.zotutab_filtr.txt from X.OTU.ID to OTU.ID for further analysis;
 
-3. ```zOTU_removing_script``` - check the taxonomy of the first 20 zOTUs with BLAST and remove zOTUs with low confidence in the taxonomy definition using zOTU_removing_script (in this step you will get updated_BD.zotutab_filtr.txt, updated_BD.z_sintax_filtr.txt and updated_BD.zotus_filtr.fa" without zOTUs with low confidence in the taxonomy definition)
+3. ```3_zOTU_removing_script.R``` - check the taxonomy of the first 20 zOTUs with BLAST and remove zOTUs with low confidence in the taxonomy definition using zOTU_removing_script (in this step you will get updated_BD.zotutab_filtr.txt, updated_BD.z_sintax_filtr.txt and updated_BD.zotus_filtr.fa" without zOTUs with low confidence in the taxonomy definition)
 
-4. ```usearch_data_processing``` - (part 2) taxonomy summary reports and statistics report generation
-5. ```rarecurve_script``` - generate rarefaction curves for the PA data
-6. ```NMDS_plot_script``` - construction NMDS plot
-7. ```alpha_diversity_script``` - species diversity assessment
-8. ```boxplot_script``` - visualization of species diversity assessment
-9. ```phylum_relative_abundance_script_275_combi``` - visualisation of relative abundance at the phylum level
-10.```class_relative_abundance_script_275_combi``` -  visualisation of relative abundance at the classes level
-11.```genus_relative_abundance_script_275_combi``` - visualisation of relative abundance at the genus level
+4. ```4_usearch_data_processing.sh``` - taxonomy summary reports and statistics report generation
+5. ```5_rarecurve_script.R``` - generate rarefaction curves for the PA data
+6. ```6_NMDS_plot_script.R``` - construction NMDS plot
+7. ```7_alpha_diversity_script.R``` - species diversity assessment
+8. ```8_boxplot_script``` - visualization of species diversity assessment
+9. ```9_phylum_relative_abundance_script_275_combi.R``` - visualisation of relative abundance at the phylum level
+10.```10_class_relative_abundance_script_275_combi.R``` -  visualisation of relative abundance at the classes level
+11.```11_genus_relative_abundance_script_275_combi.R``` - visualisation of relative abundance at the genus level
 
 
 ##### Usearch+vegan pipeline for 18S data processing
 
-1. ```usearch_data_processing_18s``` - (part 1) data processing: read merging, primer trimming, high-quality filtering (expected error threshold 1.0 (option -fastq_maxee 1.0)), finding unique read, predicting biological sequences, filtering chimeras, making zOTU table, taxonomy prediction, removal of mitochondrial, chloroplast and unknown reads;
+1. ```1_usearch_data_processing_18s.sh``` - data processing: read merging, primer trimming, high-quality filtering (expected error threshold 1.0 (option -fastq_maxee 1.0)), finding unique read, predicting biological sequences, filtering chimeras, making zOTU table, taxonomy prediction, removal of mitochondrial, chloroplast and unknown reads;
 
-2. ```log_metazoa_script_18s``` - removing chloroplasts and mitochondria from the BD.zotus.fa, BD.z_sintax.txt and BD.zotutab.txt files (in R language). Then carry out further analysis;
+2. ```2_log_metazoa_script_18s.R`` - removing chloroplasts and mitochondria from the BD.zotus.fa, BD.z_sintax.txt and BD.zotutab.txt files (in R language). Then carry out further analysis;
 
 Warning: after processing the BD.zotutab.txt with log_chloroplast_script, it is necessary to rename the first column in the filtered BD.zotutab_filtr.txt from X.OTU.ID to OTU.ID for further analysis;
 
-3. ```zOTU_removing_script_18s``` - check the taxonomy of the first 20 zOTUs with BLAST and remove zOTUs with low confidence in the taxonomy definition using zOTU_removing_script (in this step you will get updated_BD.zotutab_filtr.txt, updated_BD.z_sintax_filtr.txt and updated_BD.zotus_filtr.fa" without zOTUs with low confidence in the taxonomy definition)
+3. ```3_zOTU_removing_script_18s.R``` - check the taxonomy of the first 20 zOTUs with BLAST and remove zOTUs with low confidence in the taxonomy definition using zOTU_removing_script (in this step you will get updated_BD.zotutab_filtr.txt, updated_BD.z_sintax_filtr.txt and updated_BD.zotus_filtr.fa" without zOTUs with low confidence in the taxonomy definition)
 
-4. ```usearch_data_processing_18s``` - (part 2) taxonomy summary reports and statistics report generation
-5. ```rarecurve_script_18s``` - generate rarefaction curves for the PA data
-6. ```NMDS_plot_script_18s``` - construction NMDS plot
-7. ```alpha_diversity_script_18s``` - species diversity assessment
-8. ```boxplot_script_18s``` - visualization of species diversity assessment
-9. ```phylum_relative_abundance_script_18s``` - visualisation of relative abundance at the phylum level
-10.```class_relative_abundance_script_18s``` -  visualisation of relative abundance at the classes level
-11.```family_relative_abundance_script_275_18s``` - visualisation of relative abundance at the family level
+4. ```4_usearch_data_processing_18s.sh``` - taxonomy summary reports and statistics report generation
+5. ```5_rarecurve_script_18s.R``` - generate rarefaction curves for the PA data
+6. ```6_NMDS_plot_script_18s.R``` - construction NMDS plot
+7. ```7_alpha_diversity_script_18s.R``` - species diversity assessment
+8. ```8_boxplot_script_18s.R``` - visualization of species diversity assessment
+9. ```9_phylum_relative_abundance_script_18s.R``` - visualisation of relative abundance at the phylum level
+10.```10_class_relative_abundance_script_18s.R``` -  visualisation of relative abundance at the classes level
+11.```11_family_relative_abundance_script_275_18s.R``` - visualisation of relative abundance at the family level
 
 
 
