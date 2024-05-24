@@ -28,9 +28,13 @@ Identify seasonal changes in biodiversity and structure of FL and PA bacterial c
 
 ## Data
 Instrument: Illumina MiSeq
+
 Strategy: AMPLICON
+
 Source: METAGENOMIC
+
 Selection: PCR
+
 Layout: PAIRED
 
 V3–V4 region of 16S rRNA were analyzed for bacterial diversity and V8–V9 region of 18S rRNA for eukaryotic diversity.
@@ -47,6 +51,13 @@ Bacterial community samples with identification numbers 'V1UI-0-FL', 'V1UI-0-PA'
 Metadata are situated in the `data` folder.
 
 ### Workflow plan
+
+The principal scheme of the pipeline is in the figure below. ![pipeline of investigation](./illustrations/Usearch.jpg)
+
+### Workflow plan and technical properties
+
+#### Technical properties
+> The pipeline was run on the local machine with OS Ubuntu 20.04. The package manager was conda 23.3.1 (miniconda). Python version was 3.9.13. R version was 4.3.3 Bash version was 5.0.17(1)-release (x86_64-pc-linux-gnu).
 
 ##### Usearch+vegan pipeline for 16S data processing
 
