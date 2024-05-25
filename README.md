@@ -8,7 +8,7 @@ All scripts are located in the `Usearch_scripts` and `DADA2_scripts` folders.
 
 > Illustrations
 
-The images for illustrating the repositry's readme files are located in the `illustrations` folder.
+The images for illustrating the repositry's readme files are located in the `Illustrations` folder.
 
 
 ## Introduction
@@ -52,7 +52,7 @@ Metadata are situated in the `data` folder.
 
 ### Workflow plan
 
-The principal scheme of the pipeline is in the figure below. ![pipeline of investigation](illustrations/Usearch.jpg)
+The principal scheme of the pipeline is in the figure below. ![pipeline of investigation](Illustrations/Usearch.jpg)
 
 ### Workflow plan and technical properties
 
