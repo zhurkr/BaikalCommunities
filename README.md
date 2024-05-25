@@ -63,6 +63,7 @@ The principal scheme of the pipeline is in the figure below. ![pipeline of inves
 Python version was 3.11.0. Bash version was 4.4.20(1)-release (x86_64-pc-linux-gnu). R version was 4.3.3. vegan 2.6-4
 Data processing was perfomed with USEARCH (32 bit) in version 10 or 11 + Vegan 2.6-4 community ecology R package and DADA2 + phyloseq R package. To run this pipeline you also need R packages: dplyr(v.1.1.4), seqinr (v.4.2-36), ggplot2 (v.3.5.0), cowplot (v.1.1.3), readxl (v.1.4.3), tibble (v.3.2.1).
 
+Before starting the pipeline, place the scripts in the folder with fastq files or modify scripts by modification of the paths to the files.
 
 ##### Usearch+vegan pipeline for 16S data processing
 
