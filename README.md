@@ -13,7 +13,7 @@ The images for illustrating the repositry's readme files are located in the `ill
 
 ## Introduction
 
-Lake Baikal is an oligotrophic water body with low concentration of nutrients. During the ice period, the upper layer of water near the bottom surface of the ice is increasingly enriched with nutrients due to salting out processes (doi:10.1080/03680770.1998.11898179) which promotes the development of microorganisms. The goal of the project is to identify similarities and differences in communities of bacteria and microeukaryotes living on the bottom surface of the ice and water column of Lake Baikal using metabarcoding of 16S and 18S rRNA gene fragments. 
+Lake Baikal is an oligotrophic water body with low concentration of nutrients. During the ice period, the upper layer of water near the bottom surface of the ice is increasingly enriched with nutrients due to salting out processes which promotes the development of microorganisms. The goal of the project is to identify similarities and differences in communities of bacteria and microeukaryotes living on the bottom surface of the ice and water column of Lake Baikal using metabarcoding of 16S and 18S rRNA gene fragments. 
 
 ## Aims
 
@@ -21,7 +21,7 @@ Identify seasonal changes in biodiversity and structure of FL and PA bacterial c
 
 ## Tasks
 
-1. Compare the results of sequencing data processing using two pipelines USEARCH10/11 and DADA2;
+1. Compare the results of sequencing data processing using two pipelines USEARCH10/11 (32 bit) and DADA2;
 2. Data processing: read merging, primer trimming, high-quality filtering, removal of mitochondrial, chloroplast and unknown reads;
 3. Obtaining data on the taxonomic structure and biodiversity of bacterial and microeukaryotic communities.
 
@@ -52,53 +52,54 @@ Metadata are situated in the `data` folder.
 
 ### Workflow plan
 
-The principal scheme of the pipeline is in the figure below. ![pipeline of investigation](./illustrations/Usearch.jpg)
+The principal scheme of the pipeline is in the figure below. ![pipeline of investigation](illustrations/Usearch.jpg)
 
 ### Workflow plan and technical properties
 
-#### Technical properties
-> The pipeline was run on the local machine with OS Ubuntu 20.04. The package manager was conda 23.3.1 (miniconda). Python version was 3.9.13. R version was 4.3.3 Bash version was 5.0.17(1)-release (x86_64-pc-linux-gnu).
+#### Technical properties and requirements
+> The pipeline was run on the local machine with OS Zorin 15.3. The package manager was conda 23.3.1 (miniconda). 
+Python version was 3.11.0. Bash version was 4.4.20(1)-release (x86_64-pc-linux-gnu). R version was 4.3.3. vegan 2.6-4
+Data processing was perfomed with USEARCH (32 bit) in version 10 or 11 + Vegan 2.6-4 community ecology R package and DADA2 + phyloseq R package. To run this pipeline you also need R packages: dplyr(v.1.1.4), seqinr (v.4.2-36), ggplot2 (v.3.5.0), cowplot (v.1.1.3), readxl (v.1.4.3), tibble (v.3.2.1).
+
 
 ##### Usearch+vegan pipeline for 16S data processing
 
-1. ```1_usearch_data_processing.sh``` - data processing: read merging, primer trimming, high-quality filtering (expected error threshold 1.0 (option -fastq_maxee 1.0)), finding unique read, predicting biological sequences, filtering chimeras, making zOTU table, taxonomy prediction, removal of mitochondrial, chloroplast and unknown reads;
+1. ```01_usearch_data_processing.sh``` - data processing: read merging, primer trimming, high-quality filtering (expected error threshold 1.0 (option -fastq_maxee 1.0)), finding unique read, predicting biological sequences, filtering chimeras, making zOTU table, taxonomy prediction, removal of mitochondrial, chloroplast and unknown reads;
 
-2. ```2_log_chloroplast_script.R``` - removing chloroplasts and mitochondria from the BD.zotus.fa, BD.z_sintax.txt and BD.zotutab.txt files (in R language). Then carry out further analysis;
+2. ```02_log_chloroplast_script.R``` - removing chloroplasts and mitochondria from the BD.zotus.fa, BD.z_sintax.txt and BD.zotutab.txt files (in R language). Then carry out further analysis;
 
 Warning: after processing the BD.zotutab.txt with log_chloroplast_script, it is necessary to rename the first column in the filtered BD.zotutab_filtr.txt from X.OTU.ID to OTU.ID for further analysis;
 
-3. ```3_zOTU_removing_script.R``` - check the taxonomy of the first 20 zOTUs with BLAST and remove zOTUs with low confidence in the taxonomy definition using zOTU_removing_script (in this step you will get updated_BD.zotutab_filtr.txt, updated_BD.z_sintax_filtr.txt and updated_BD.zotus_filtr.fa" without zOTUs with low confidence in the taxonomy definition)
+3. ```03_zOTU_removing_script.R``` - check the taxonomy of the first 20 zOTUs with BLAST and remove zOTUs with low confidence in the taxonomy definition using zOTU_removing_script (in this step you will get updated_BD.zotutab_filtr.txt, updated_BD.z_sintax_filtr.txt and updated_BD.zotus_filtr.fa" without zOTUs with low confidence in the taxonomy definition)
 
-4. ```4_usearch_data_processing.sh``` - taxonomy summary reports and statistics report generation
-5. ```5_rarecurve_script.R``` - generate rarefaction curves for the PA data
-6. ```6_NMDS_plot_script.R``` - construction NMDS plot
-7. ```7_alpha_diversity_script.R``` - species diversity assessment
-8. ```8_boxplot_script``` - visualization of species diversity assessment
-9. ```9_phylum_relative_abundance_script_275_combi.R``` - visualisation of relative abundance at the phylum level
+4. ```04_usearch_data_processing.sh``` - taxonomy summary reports and statistics report generation
+5. ```05_rarecurve_script.R``` - generate rarefaction curves for the PA data
+6. ```06_NMDS_plot_script.R``` - construction NMDS plot
+7. ```07_alpha_diversity_script.R``` - species diversity assessment
+8. ```08_boxplot_script``` - visualization of species diversity assessment
+9. ```09_phylum_relative_abundance_script_275_combi.R``` - visualisation of relative abundance at the phylum level
 10.```10_class_relative_abundance_script_275_combi.R``` -  visualisation of relative abundance at the classes level
 11.```11_genus_relative_abundance_script_275_combi.R``` - visualisation of relative abundance at the genus level
 
 
 ##### Usearch+vegan pipeline for 18S data processing
 
-1. ```1_usearch_data_processing_18s.sh``` - data processing: read merging, primer trimming, high-quality filtering (expected error threshold 1.0 (option -fastq_maxee 1.0)), finding unique read, predicting biological sequences, filtering chimeras, making zOTU table, taxonomy prediction, removal of mitochondrial, chloroplast and unknown reads;
+1. ```01_usearch_data_processing_18s.sh``` - data processing: read merging, primer trimming, high-quality filtering (expected error threshold 1.0 (option -fastq_maxee 1.0)), finding unique read, predicting biological sequences, filtering chimeras, making zOTU table, taxonomy prediction, removal of mitochondrial, chloroplast and unknown reads;
 
-2. ```2_log_metazoa_script_18s.R`` - removing chloroplasts and mitochondria from the BD.zotus.fa, BD.z_sintax.txt and BD.zotutab.txt files (in R language). Then carry out further analysis;
+2. ```02_log_metazoa_script_18s.R`` - removing chloroplasts and mitochondria from the BD.zotus.fa, BD.z_sintax.txt and BD.zotutab.txt files (in R language). Then carry out further analysis;
 
 Warning: after processing the BD.zotutab.txt with log_chloroplast_script, it is necessary to rename the first column in the filtered BD.zotutab_filtr.txt from X.OTU.ID to OTU.ID for further analysis;
 
-3. ```3_zOTU_removing_script_18s.R``` - check the taxonomy of the first 20 zOTUs with BLAST and remove zOTUs with low confidence in the taxonomy definition using zOTU_removing_script (in this step you will get updated_BD.zotutab_filtr.txt, updated_BD.z_sintax_filtr.txt and updated_BD.zotus_filtr.fa" without zOTUs with low confidence in the taxonomy definition)
+3. ```03_zOTU_removing_script_18s.R``` - check the taxonomy of the first 20 zOTUs with BLAST and remove zOTUs with low confidence in the taxonomy definition using zOTU_removing_script (in this step you will get updated_BD.zotutab_filtr.txt, updated_BD.z_sintax_filtr.txt and updated_BD.zotus_filtr.fa" without zOTUs with low confidence in the taxonomy definition)
 
-4. ```4_usearch_data_processing_18s.sh``` - taxonomy summary reports and statistics report generation
-5. ```5_rarecurve_script_18s.R``` - generate rarefaction curves for the PA data
-6. ```6_NMDS_plot_script_18s.R``` - construction NMDS plot
-7. ```7_alpha_diversity_script_18s.R``` - species diversity assessment
-8. ```8_boxplot_script_18s.R``` - visualization of species diversity assessment
-9. ```9_phylum_relative_abundance_script_18s.R``` - visualisation of relative abundance at the phylum level
+4. ```04_usearch_data_processing_18s.sh``` - taxonomy summary reports and statistics report generation
+5. ```05_rarecurve_script_18s.R``` - generate rarefaction curves for the PA data
+6. ```06_NMDS_plot_script_18s.R``` - construction NMDS plot
+7. ```07_alpha_diversity_script_18s.R``` - species diversity assessment
+8. ```08_boxplot_script_18s.R``` - visualization of species diversity assessment
+9. ```09_phylum_relative_abundance_script_18s.R``` - visualisation of relative abundance at the phylum level
 10.```10_class_relative_abundance_script_18s.R``` -  visualisation of relative abundance at the classes level
 11.```11_family_relative_abundance_script_275_18s.R``` - visualisation of relative abundance at the family level
-
-
 
 
 ## Results and discussion
@@ -119,8 +120,8 @@ Results obtained with USEARCH10/11 and DADA2 are different (mostly in richness a
 
  - Kristina Zhur, 
  - Aleksei Sivtsev
- - Maria Bashenkhaeva* (Limnological Institute SB RAS, Irkutsk State University)
- - Polina Drozdova* (Limnological Institute SB RAS, Irkutsk State University)
+ - Maria Bashenkhaeva* (Limnological Institute SB RAS)
+ - Polina Drozdova* (Irkutsk State University)
 
 \* project supervisor 
 
