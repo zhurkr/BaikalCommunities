@@ -13,7 +13,7 @@ The images for illustrating the repositry's readme files are located in the `ill
 
 ## Introduction
 
-Lake Baikal is an oligotrophic water body with low concentration of nutrients. During the ice period, the upper layer of water near the bottom surface of the ice is increasingly enriched with nutrients due to salting out processes (doi:10.1080/03680770.1998.11898179) which promotes the development of microorganisms. The goal of the project is to identify similarities and differences in communities of bacteria and microeukaryotes living on the bottom surface of the ice and water column of Lake Baikal using metabarcoding of 16S and 18S rRNA gene fragments. 
+Lake Baikal is an oligotrophic water body with low concentration of nutrients. During the ice period, the upper layer of water near the bottom surface of the ice is increasingly enriched with nutrients due to salting out processes which promotes the development of microorganisms. The goal of the project is to identify similarities and differences in communities of bacteria and microeukaryotes living on the bottom surface of the ice and water column of Lake Baikal using metabarcoding of 16S and 18S rRNA gene fragments. 
 
 ## Aims
 
@@ -21,7 +21,7 @@ Identify seasonal changes in biodiversity and structure of FL and PA bacterial c
 
 ## Tasks
 
-1. Compare the results of sequencing data processing using two pipelines USEARCH10/11 and DADA2;
+1. Compare the results of sequencing data processing using two pipelines USEARCH10/11 (32 bit) and DADA2;
 2. Data processing: read merging, primer trimming, high-quality filtering, removal of mitochondrial, chloroplast and unknown reads;
 3. Obtaining data on the taxonomic structure and biodiversity of bacterial and microeukaryotic communities.
 
@@ -52,7 +52,7 @@ Metadata are situated in the `data` folder.
 
 ### Workflow plan
 
-The principal scheme of the pipeline is in the figure below. ![pipeline of investigation](./illustrations/Usearch.jpg)
+The principal scheme of the pipeline is in the figure below. ![pipeline of investigation](illustrations/Usearch.jpg)
 
 ### Workflow plan and technical properties
 
@@ -99,8 +99,6 @@ Warning: after processing the BD.zotutab.txt with log_chloroplast_script, it is 
 11.```11_family_relative_abundance_script_275_18s.R``` - visualisation of relative abundance at the family level
 
 
-
-
 ## Results and discussion
 
 Results obtained with USEARCH10/11 and DADA2 are different (mostly in richness and biodiversity). Abundance estimation results are similar for the two approaches. USEARCH-UNOISE3 showed higher sensitivity. DADA2 showed higher biological resolution
@@ -119,8 +117,8 @@ Results obtained with USEARCH10/11 and DADA2 are different (mostly in richness a
 
  - Kristina Zhur, 
  - Aleksei Sivtsev
- - Maria Bashenkhaeva* (Limnological Institute SB RAS, Irkutsk State University)
- - Polina Drozdova* (Limnological Institute SB RAS, Irkutsk State University)
+ - Maria Bashenkhaeva* (Limnological Institute SB RAS)
+ - Polina Drozdova* (Irkutsk State University)
 
 \* project supervisor 
 
