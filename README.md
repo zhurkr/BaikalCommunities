@@ -57,7 +57,7 @@ The principal scheme of the pipeline is in the figure below. ![pipeline of inves
 ### Workflow plan and technical properties
 
 #### Technical properties
-> The pipeline was run on the local machine with OS Ubuntu 20.04. The package manager was conda 23.3.1 (miniconda). Python version was 3.9.13. R version was 4.3.3 Bash version was 5.0.17(1)-release (x86_64-pc-linux-gnu).
+> The pipeline was run on the local machine with OS Zorin 15.3. The package manager was conda 23.3.1 (miniconda). Python version was 3.11.0. R version was 4.3.3 Bash version was 4.4.20(1)-release (x86_64-pc-linux-gnu).
 
 ##### Usearch+vegan pipeline for 16S data processing
 
