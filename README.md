@@ -56,8 +56,11 @@ The principal scheme of the pipeline is in the figure below. ![pipeline of inves
 
 ### Workflow plan and technical properties
 
-#### Technical properties
-> The pipeline was run on the local machine with OS Zorin 15.3. The package manager was conda 23.3.1 (miniconda). Python version was 3.11.0. R version was 4.3.3 Bash version was 4.4.20(1)-release (x86_64-pc-linux-gnu).
+#### Technical properties and requirements
+> The pipeline was run on the local machine with OS Zorin 15.3. The package manager was conda 23.3.1 (miniconda). 
+Python version was 3.11.0. Bash version was 4.4.20(1)-release (x86_64-pc-linux-gnu). R version was 4.3.3. vegan 2.6-4
+Data processing was perfomed with USEARCH (32 bit) in version 10 or 11 + Vegan 2.6-4 community ecology R package and DADA2 + phyloseq R package. To run this pipeline you also need R packages: dplyr(v.1.1.4), seqinr (v.4.2-36), ggplot2 (v.3.5.0), cowplot (v.1.1.3), readxl (v.1.4.3), tibble (v.3.2.1).
+
 
 ##### Usearch+vegan pipeline for 16S data processing
 
