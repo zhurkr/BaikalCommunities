@@ -50,6 +50,8 @@ Bacterial community samples with identification numbers 'V1UI-0-FL', 'V1UI-0-PA'
 
 Metadata are situated in the `data` folder.
 
+Example fastq files for 16S and 18S data processing you can find in 16S_examples and 18S_examples folders resperctively.
+
 ### Workflow plan
 
 The principal scheme of the pipeline is in the figure below. ![pipeline of investigation](Illustrations/Usearch.jpg)
