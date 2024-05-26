@@ -54,14 +54,15 @@ Example fastq files for 16S and 18S data processing you can find in `16S_example
 
 ### Workflow plan
 
-The principal scheme of the pipeline is in the figure below. ![pipeline of investigation](Illustrations/Usearch.jpg)
+The principal scheme of the pipeline is in the figure below. 
 
+![pipeline of investigation](Illustrations/Usearch.jpg) ![pipeline of investigation](Illustrations/DADA2_pipeline.jpg)
 ### Workflow plan and technical properties
 
 #### Technical properties and requirements
 > The pipeline was run on the local machine with OS Zorin 15.3. The package manager was conda 23.3.1 (miniconda). 
 Python version was 3.11.0. Bash version was 4.4.20(1)-release (x86_64-pc-linux-gnu). R version was 4.3.3. vegan 2.6-4
-Data processing was perfomed with USEARCH (32 bit) in version 10 or 11 + Vegan 2.6-4 community ecology R package and DADA2 + phyloseq R package. To run this pipeline you also need R packages: dplyr(v.1.1.4), seqinr (v.4.2-36), ggplot2 (v.3.5.0), cowplot (v.1.1.3), readxl (v.1.4.3), tibble (v.3.2.1).
+Data processing was perfomed with USEARCH (32 bit) in version 10 or 11 + Vegan 2.6-4 community ecology R package and DADA2 + phyloseq R package. To run this pipeline you also need R packages: dplyr(v.1.1.4), seqinr (v.4.2-36), ggplot2 (v.3.5.0), cowplot (v.1.1.3), readxl (v.1.4.3), tibble (v.3.2.1), dada2 (v1.32.0), Biostrings (v.2.72.0), Phyloseq (v.1.48.0).
 
 Before starting the pipeline, place the scripts in the folder with fastq files or modify scripts by modification of the paths to the files.
 
@@ -104,6 +105,12 @@ Warning: after processing the BD.zotutab.txt with log_chloroplast_script, it is 
 10.```10_class_relative_abundance_script_18s.R``` -  visualisation of relative abundance at the classes level
 11.```11_family_relative_abundance_script_275_18s.R``` - visualisation of relative abundance at the family level
 
+##### DADA2+Phyloseq pipeline
+
+1. ```01_16s_DADA2_script.R``` and ```01_18S_DADA2_script.R``` - data processing: visualize the quality profile, high-quality filtering, primer trimming, learn the error rates, dereplecation, ASV interference, read merging, filtering chimeras, taxonomy prediction, removal of unwanted reads (chlorplast and mitochondrial / Athropoda);
+2. ```02_16s_boxplot_script.R``` and  ```02_18S_boxplot_script.R``` - visualization of species diversity assessment
+3. ```03_phylum_relative_abundance_script.R``` and 04, 05, 06 for 16S and ```03_phylum_relative_abundance_script.R``` and 04, 05 for 18S - visualisation of relative abundance at the selected level
+4. ```07_pcoa_plot_script.R``` and ```06_pcoa_script.R``` - construction PCoA plot
 
 ## Results and discussion
 
