@@ -33,6 +33,8 @@ tax_info <- tax_table(ps_na_phylum)
 # Get the Phylum column
 phylum_info <- tax_info[,"Phylum"]
 
+ps_na_phylum <- transform_sample_counts(ps_na_phylum, function(x) x / sum(x))
+
 # Sum the counts for each Phylum
 phylum_counts <- tapply(taxa_sums(ps_na_phylum), phylum_info, sum)
 
@@ -53,7 +55,7 @@ df_phyla_july <- psmelt(ps_na_phylum.top12_phyla_july)
 df_phyla_april$id <- factor(df_phyla_april$id, levels = desired_order_april)
 df_phyla_july$id <- factor(df_phyla_july$id, levels = desired_order_july)
 
-# Create color set
+# Задаем палитру
 phylum_colors <- c(
   "Ochrophyta" = "#1f77b4", 
   "Ciliophora" = "#ff7f0e", 
@@ -76,10 +78,10 @@ phylum_colors <- c(
   "Bacteroidetes" = "#dadaeb"
 )
 
-# phylum barplots
+# Построение графика phylum
 relative_abundance_phylum_top12_april <- ggplot(df_phyla_april, aes(x = id, y = Abundance, fill = Phylum)) +
   geom_bar(stat = "identity", position = "stack") +
-  scale_fill_manual(values = phylum_colors) + 
+  scale_fill_manual(values = phylum_colors) + # Используем заданную палитру
   labs(title = "Relative abundances of the microeukaryotic phylum (top12) in April", 
        x = "samples", 
        y = "abundance") +
@@ -87,16 +89,16 @@ relative_abundance_phylum_top12_april <- ggplot(df_phyla_april, aes(x = id, y = 
     plot.title = element_text(hjust = 0.5, size = 15), 
     axis.title.x = element_text(size = 15), 
     axis.title.y = element_text(size = 15), 
-    axis.text.x = element_text(angle = 45, hjust = 1, size = 15), 
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 15), # Объединяем настройки для текста оси X
     legend.text = element_text(size = 10),
     theme_minimal() 
   )
 print(relative_abundance_phylum_top12_april)
-ggsave("relative_abundance_phylum_top12_april_275_v132.jpeg", plot = relative_abundance_phylum_top12_april, width = 10, height = 6, dpi = 300)
+ggsave("relative_abundance_phylum_top12_april_275_v132.jpeg", plot = relative_abundance_phylum_top12_april, width = 10, height = 12, dpi = 300)
 
 relative_abundance_phylum_top12_july <- ggplot(df_phyla_july, aes(x = id, y = Abundance, fill = Phylum)) +
   geom_bar(stat = "identity", position = "stack") +
-  scale_fill_manual(values = phylum_colors) + 
+  scale_fill_manual(values = phylum_colors) + # Используем заданную палитру
   labs(title = "Relative abundances of the microeukaryotic phylum (top12) in July", 
        x = "samples", 
        y = "abundance") +
@@ -104,9 +106,9 @@ relative_abundance_phylum_top12_july <- ggplot(df_phyla_july, aes(x = id, y = Ab
     plot.title = element_text(hjust = 0.5, size = 15), 
     axis.title.x = element_text(size = 15), 
     axis.title.y = element_text(size = 15), 
-    axis.text.x = element_text(angle = 45, hjust = 1, size = 15), 
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 15), # Объединяем настройки для текста оси X
     legend.text = element_text(size = 10),
     theme_minimal() 
   )
 print(relative_abundance_phylum_top12_july)
-ggsave("relative_abundance_phylum_top12_july_275_v132.jpeg", plot = relative_abundance_phylum_top12_july, width = 10, height = 6, dpi = 300)
+ggsave("relative_abundance_phylum_top12_july_275_v132.jpeg", plot = relative_abundance_phylum_top12_july, width = 10, height = 12, dpi = 300)
